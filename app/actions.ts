@@ -40,9 +40,9 @@ export async function createItem(formData: FormData) {
     }
 
     if (!data) {
-        // const { error } = await supabase
-        //     .from("urls")
-        //     .insert({ long_url: longUrl, short_url: "lol" });
+        const { error } = await supabase
+            .from("urls")
+            .insert({ long_url: longUrl, short_url: "lol" });
         return { shortUrl: shortCodeCandidate };
     }
 

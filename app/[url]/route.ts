@@ -3,7 +3,7 @@ import { findLongUrl } from "../actions";
 
 export async function GET(
     req: NextRequest,
-    { params }: { params: { url: string } }
+    { params }: { params: Promise<{ url: string }> }
 ) {
     const { url } = await params;
     const { data, error } = await findLongUrl(url);
